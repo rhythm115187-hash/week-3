@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rhythm Dhital | Personal Portfolio</title>
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       Hero / Header Section
+       ========================= -->
+  <header class="hero">
+    <div class="container">
+      <nav class="top-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <p class="hero-greeting">HELLO, I'M</p>
+
+        <h1>Rhythm Dhital</h1>
+
+        <p class="hero-description">
+          Computer Science student passionate about web development,
+          Linux, databases, and cybersecurity.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-button">
+            View My Projects
+          </a>
+
+          <a href="#contact" class="secondary-button">
+            Contact Me
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <div class="image-circle">
+          <img
+            src="images/profile.jpeg"
+            alt="Portrait of Rhythm Dhital"
+          >
+        </div>
+
+        <div class="image-decoration"></div>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       Main Content
+       ========================= -->
+  <main>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container about-content">
+
+        <div class="about-text">
+
+          <p class="section-label">ABOUT ME</p>
+
+          <h2>
+            Building my skills through technology
+            and practical projects.
+          </h2>
+
+          <p>
+            I am a computer science student interested in web development,
+            Linux systems, databases, and cybersecurity. I enjoy building
+            practical projects and learning how software works from the
+            interface to the backend.
+          </p>
+
+        </div>
+
+        <aside class="about-card">
+          <div class="about-card-icon">01</div>
+
+          <h3>Computer Science</h3>
+
+          <p>
+            Learning software development, system administration,
+            databases, and modern web technologies.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+
+        <p class="section-label">MY SKILLS</p>
+
+        <h2>Technical Skills</h2>
+
+        <dl class="skills-grid">
+
+          <div class="skill-card">
+            <dt>HTML5</dt>
+            <dd>
+              Semantic page structure, accessible forms,
+              and standards-compliant markup.
+            </dd>
+          </div>
+
+          <div class="skill-card">
+            <dt>JavaScript</dt>
+            <dd>
+              Interactive web applications and
+              client-side programming.
+            </dd>
+          </div>
+
+          <div class="skill-card">
+            <dt>React</dt>
+            <dd>
+              Component-based frontend development
+              for modern web applications.
+            </dd>
+          </div>
+
+          <div class="skill-card">
+            <dt>Node.js</dt>
+            <dd>
+              Backend APIs and server-side JavaScript
+              development.
+            </dd>
+          </div>
+
+          <div class="skill-card">
+            <dt>PostgreSQL</dt>
+            <dd>
+              Relational database design, SQL,
+              and application data management.
+            </dd>
+          </div>
+
+          <div class="skill-card">
+            <dt>Linux</dt>
+            <dd>
+              Arch Linux administration, shell workflows,
+              and development environments.
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+
+        <p class="section-label">MY WORK</p>
+
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+
+            <div class="project-number">01</div>
+
+            <h3>Coin Row</h3>
+
+            <p>
+              A full-stack web project that combines a React frontend
+              with a Node.js and PostgreSQL backend for managing games
+              and user access.
+            </p>
+
+            <a
+              href="https://github.com/rudhra-dhital/coin-row"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View the Coin Row repository →
+            </a>
+
+          </article>
+
+
+          <article class="project-card">
+
+            <div class="project-number">02</div>
+
+            <h3>Linux Development Setup</h3>
+
+            <p>
+              A personal Linux configuration project focused on a
+              productive Arch Linux environment with Hyprland,
+              shell customization, development tools, and system utilities.
+            </p>
+
+            <a
+              href="https://github.com/rudhra-dhital/arch-linux-config"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View the Linux configuration repository →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-container">
+
+        <p class="section-label">GET IN TOUCH</p>
+
+        <h2>Contact Me</h2>
+
+        <p class="contact-intro">
+          Have a question or want to discuss a project?
+          Send me a message using the form below.
+        </p>
+
+        <form class="contact-form" action="#" method="post">
+
+          <div class="form-group">
+
+            <label for="name">
+              Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              placeholder="Enter your name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Enter your email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="7"
+              placeholder="Write your message"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button type="submit">
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       Footer
+       ========================= -->
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+      <p>
+        &copy; 2026 Rhythm Dhital.
+        Built with semantic HTML5 and CSS.
+      </p>
+
+      <a href="#top">Back to top ↑</a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

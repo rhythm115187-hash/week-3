@@ -1,0 +1,894 @@
+/* =====================================================
+   RHYTHM DHITAL - PERSONAL PORTFOLIO
+   Week 4 CSS Assignment
+
+   This stylesheet controls:
+   - Colors
+   - Typography
+   - Layout
+   - Responsive design
+   - Buttons
+   - Cards
+   - Forms
+   - Hover effects
+
+   All styling is kept separate from the HTML.
+   ===================================================== */
+
+
+/* =====================================================
+   1. CSS VARIABLES
+   ===================================================== */
+
+:root {
+  --background: #071018;
+  --background-light: #0d1822;
+
+  --card: #101f2b;
+  --card-hover: #142936;
+
+  --text: #e8f1f5;
+  --muted: #9eb0ba;
+
+  --accent: #4de0ce;
+  --accent-dark: #20b9a7;
+
+  --border: #203542;
+
+  --max-width: 1100px;
+}
+
+
+/* =====================================================
+   2. GENERAL / RESET STYLES
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   3. HERO SECTION
+   ===================================================== */
+
+.hero {
+  min-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(77, 224, 206, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(100, 140, 255, 0.10),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+.top-nav {
+  width: 100%;
+  padding-top: 18px;
+}
+
+/* Hero two-column layout */
+
+.hero-content {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    0.8fr;
+
+  align-items: center;
+
+  gap: 80px;
+  padding-top: 24px;
+}
+
+
+/* =====================================================
+   4. HERO TEXT
+   ===================================================== */
+
+.hero-greeting {
+  color: var(--accent);
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+
+  line-height: 1;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 25px;
+}
+
+.hero-description {
+  max-width: 600px;
+
+  color: var(--muted);
+
+  font-size: 1.2rem;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   5. HERO BUTTONS
+   ===================================================== */
+
+.hero-buttons {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-block;
+
+  padding: 12px 22px;
+
+  border-radius: 9px;
+
+  font-weight: bold;
+
+  transition:
+    0.25s ease;
+}
+
+
+/* Main button */
+
+.primary-button {
+  background: var(--accent);
+
+  color: #071018;
+}
+
+.primary-button:hover {
+  background: var(--accent-dark);
+
+  color: #071018;
+
+  text-decoration: none;
+
+  transform: translateY(-3px);
+}
+
+
+/* Secondary button */
+
+.secondary-button {
+  border: 1px solid var(--border);
+
+  color: var(--text);
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+
+  color: var(--accent);
+
+  text-decoration: none;
+
+  transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   6. NAVIGATION
+   ===================================================== */
+
+.top-nav .nav-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 22px;
+
+  list-style: none;
+  padding: 0 0 12px;
+}
+
+.nav-list a {
+  display: block;
+
+  padding: 7px 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  transition: 0.25s ease;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   7. HERO PROFILE IMAGE
+   ===================================================== */
+
+.hero-image {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Circular image container */
+
+.image-circle {
+  position: relative;
+
+  width: min(360px, 80vw);
+
+  aspect-ratio: 1;
+
+  padding: 10px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      #263c63
+    );
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(77, 224, 206, 0.12);
+}
+
+
+/* Profile image */
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 18%;
+
+  transform: scale(0.92);
+  transform-origin: center center;
+
+  border-radius: 50%;
+
+  border: 5px solid var(--background);
+}
+
+
+/* Decorative circle */
+
+.image-decoration {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  border: 1px solid rgba(77, 224, 206, 0.25);
+
+  border-radius: 50%;
+
+  transform:
+    translate(25px, 25px);
+
+  z-index: -1;
+}
+
+
+/* =====================================================
+   8. GENERAL SECTION STYLING
+   ===================================================== */
+
+.section {
+  padding: 90px 0;
+}
+
+.section-alt {
+  background: var(--background-light);
+}
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  line-height: 1.2;
+
+  margin-bottom: 30px;
+}
+
+.section-label {
+  color: var(--accent);
+
+  font-size: 0.8rem;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   9. ABOUT SECTION
+   ===================================================== */
+
+.about-content {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    320px;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+.about-text h2 {
+  max-width: 700px;
+}
+
+.about-text > p:last-child {
+  max-width: 700px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+}
+
+
+/* About information card */
+
+.about-card {
+  padding: 30px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  background: var(--card);
+
+  transition: 0.25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--accent-dark);
+
+  background: var(--card-hover);
+}
+
+.about-card-icon {
+  color: var(--accent);
+
+  font-size: 0.8rem;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+}
+
+.about-card h3 {
+  margin-bottom: 12px;
+
+  font-size: 1.4rem;
+}
+
+.about-card p {
+  color: var(--muted);
+}
+
+
+/* =====================================================
+   10. SKILLS SECTION
+   ===================================================== */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.skill-card {
+  padding: 25px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: var(--card);
+
+  transition: 0.25s ease;
+}
+
+.skill-card:hover {
+  background: var(--card-hover);
+
+  transform: translateY(-5px);
+
+  border-color: var(--accent-dark);
+}
+
+.skill-card dt {
+  color: var(--accent);
+
+  font-size: 1.2rem;
+
+  font-weight: bold;
+
+  margin-bottom: 8px;
+}
+
+.skill-card dd {
+  color: var(--muted);
+}
+
+
+/* =====================================================
+   11. PROJECT SECTION
+   ===================================================== */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.project-card {
+  padding: 30px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  background: var(--card);
+
+  transition: 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--accent-dark);
+
+  background: var(--card-hover);
+}
+
+.project-number {
+  color: var(--accent);
+
+  font-size: 0.8rem;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  margin-bottom: 15px;
+
+  font-size: 1.5rem;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+
+  color: var(--muted);
+}
+
+.project-card a {
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  color: var(--accent-dark);
+}
+
+
+/* =====================================================
+   12. CONTACT SECTION
+   ===================================================== */
+
+.contact-container {
+  max-width: 750px;
+}
+
+.contact-intro {
+  color: var(--muted);
+
+  margin-top: -15px;
+
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: var(--card);
+
+  color: var(--text);
+
+  font: inherit;
+
+  outline: none;
+
+  transition: 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #647780;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px rgba(77, 224, 206, 0.08);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+/* Submit button */
+
+.contact-form button {
+  align-self: flex-start;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: var(--accent);
+
+  color: #071018;
+
+  font-weight: bold;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.contact-form button:hover {
+  background: var(--accent-dark);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   13. FOOTER
+   ===================================================== */
+
+.site-footer {
+  padding: 30px 0;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--muted);
+}
+
+.footer-content {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.footer-content a {
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   14. TABLET RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  /* Hero becomes one column */
+
+  .hero {
+    min-height: auto;
+
+    padding: 90px 0;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    gap: 60px;
+  }
+
+  .hero-description {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero nav {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .nav-list {
+    justify-content: center;
+  }
+
+  /* Move image above text */
+
+  .hero-image {
+    order: -1;
+  }
+
+  .image-circle {
+    width: 260px;
+  }
+
+  .image-decoration {
+    width: 260px;
+
+    height: 260px;
+  }
+
+
+  /* About */
+
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .about-card {
+    max-width: 500px;
+
+    margin: 0 auto;
+  }
+
+
+  /* Skills */
+
+  .skills-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+/* =====================================================
+   15. MOBILE RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  /* Hero */
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+
+  /* Hero buttons */
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .secondary-button {
+    text-align: center;
+  }
+
+
+  /* Hero image */
+
+  .hero-image {
+    margin-bottom: 10px;
+  }
+
+  .image-circle {
+    width: 220px;
+  }
+
+  .image-decoration {
+    width: 220px;
+
+    height: 220px;
+  }
+
+
+  /* Navigation */
+
+  .nav-list {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  /* Sections */
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+
+  /* Skills */
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Projects */
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .skill-card {
+    padding: 22px;
+  }
+
+
+  /* Contact */
+
+  .contact-form button {
+    width: 100%;
+  }
+
+
+  /* Footer */
+
+  .footer-content {
+    flex-direction: column;
+
+    text-align: center;
+  }
+}
